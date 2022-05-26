@@ -1,0 +1,335 @@
+[
+    {
+        "id": "e1ac027a1b892927",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "13175ec910863fcd",
+        "type": "arduino-board",
+        "device": "/dev/ttyACM0"
+    },
+    {
+        "id": "a8f7128c75a66f40",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "b70eaa16df3e699d",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "e654c2be62fc9630",
+        "type": "ui_group",
+        "name": "PetFeeder",
+        "tab": "a8f7128c75a66f40",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "61697722e053c22a",
+        "type": "rpi-srf",
+        "z": "e1ac027a1b892927",
+        "name": "",
+        "topic": "SRF",
+        "pulse": "0.5",
+        "pins": "7,11",
+        "precision": "0",
+        "x": 510,
+        "y": 300,
+        "wires": [
+            [
+                "85a1638516fcc8d0",
+                "e7b65f4514cda7d6"
+            ]
+        ]
+    },
+    {
+        "id": "85a1638516fcc8d0",
+        "type": "debug",
+        "z": "e1ac027a1b892927",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 730,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "e7b65f4514cda7d6",
+        "type": "ui_gauge",
+        "z": "e1ac027a1b892927",
+        "name": "",
+        "group": "e654c2be62fc9630",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Distância",
+        "label": "cm",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "15",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 740,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "c518b69ec6fae0b8",
+        "type": "ui_template",
+        "z": "e1ac027a1b892927",
+        "name": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "format": "<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 460,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "650773ba2c8ddd7f",
+        "type": "ui_switch",
+        "z": "e1ac027a1b892927",
+        "name": "",
+        "label": "Servo",
+        "tooltip": "",
+        "group": "e654c2be62fc9630",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "180",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 510,
+        "y": 500,
+        "wires": [
+            [
+                "dc84aa9010c7b2a3"
+            ]
+        ]
+    },
+    {
+        "id": "dc84aa9010c7b2a3",
+        "type": "arduino out",
+        "z": "e1ac027a1b892927",
+        "name": "",
+        "pin": "8",
+        "state": "SERVO",
+        "arduino": "13175ec910863fcd",
+        "x": 750,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "5aace7f8df2bdd68",
+        "type": "aedes broker",
+        "z": "e1ac027a1b892927",
+        "name": "",
+        "mqtt_port": 1883,
+        "mqtt_ws_bind": "port",
+        "mqtt_ws_port": null,
+        "mqtt_ws_path": "",
+        "cert": "",
+        "key": "",
+        "certname": "",
+        "keyname": "",
+        "dburl": "",
+        "usetls": false,
+        "x": 490,
+        "y": 120,
+        "wires": [
+            [
+                "721d20cb1a0cb0f4"
+            ],
+            [
+                "2b14d2bd9c25a550"
+            ]
+        ]
+    },
+    {
+        "id": "721d20cb1a0cb0f4",
+        "type": "debug",
+        "z": "e1ac027a1b892927",
+        "name": "Broker Status Events",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 880,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "2b14d2bd9c25a550",
+        "type": "debug",
+        "z": "e1ac027a1b892927",
+        "name": "Broker Publish Events",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 880,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "d62fc4a57dc9e8ef",
+        "type": "arduino in",
+        "z": "e1ac027a1b892927",
+        "name": "",
+        "pin": "7",
+        "state": "INPUT",
+        "arduino": "13175ec910863fcd",
+        "x": 510,
+        "y": 400,
+        "wires": [
+            [
+                "85a1638516fcc8d0"
+            ]
+        ]
+    }
+]
