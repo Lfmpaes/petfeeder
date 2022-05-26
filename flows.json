@@ -481,7 +481,7 @@
         "targetType": "msg",
         "statusVal": "counter",
         "statusType": "auto",
-        "x": 1210,
+        "x": 1250,
         "y": 680,
         "wires": []
     },
