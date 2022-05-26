@@ -129,20 +129,47 @@
         "className": ""
     },
     {
+        "id": "844a0f3dcde1a982",
+        "type": "mqtt-broker",
+        "name": "HiveMQ",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
         "id": "61697722e053c22a",
         "type": "rpi-srf",
         "z": "e1ac027a1b892927",
-        "name": "",
+        "name": "Sensor de Proximidade",
         "topic": "SRF",
         "pulse": "0.5",
         "pins": "7,11",
         "precision": "0",
-        "x": 510,
-        "y": 300,
+        "x": 420,
+        "y": 220,
         "wires": [
             [
                 "85a1638516fcc8d0",
-                "e7b65f4514cda7d6"
+                "e7b65f4514cda7d6",
+                "3e4453275a7f2090"
             ]
         ]
     },
@@ -159,8 +186,8 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 730,
-        "y": 300,
+        "x": 870,
+        "y": 200,
         "wires": []
     },
     {
@@ -186,29 +213,9 @@
         "seg1": "",
         "seg2": "",
         "className": "",
-        "x": 740,
-        "y": 400,
+        "x": 720,
+        "y": 320,
         "wires": []
-    },
-    {
-        "id": "c518b69ec6fae0b8",
-        "type": "ui_template",
-        "z": "e1ac027a1b892927",
-        "name": "",
-        "order": 0,
-        "width": 0,
-        "height": 0,
-        "format": "<div ng-bind-html=\"msg.payload\"></div>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 460,
-        "y": 200,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "650773ba2c8ddd7f",
@@ -236,8 +243,8 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 510,
-        "y": 500,
+        "x": 490,
+        "y": 420,
         "wires": [
             [
                 "dc84aa9010c7b2a3"
@@ -252,68 +259,8 @@
         "pin": "8",
         "state": "SERVO",
         "arduino": "13175ec910863fcd",
-        "x": 750,
-        "y": 500,
-        "wires": []
-    },
-    {
-        "id": "5aace7f8df2bdd68",
-        "type": "aedes broker",
-        "z": "e1ac027a1b892927",
-        "name": "",
-        "mqtt_port": 1883,
-        "mqtt_ws_bind": "port",
-        "mqtt_ws_port": null,
-        "mqtt_ws_path": "",
-        "cert": "",
-        "key": "",
-        "certname": "",
-        "keyname": "",
-        "dburl": "",
-        "usetls": false,
-        "x": 490,
-        "y": 120,
-        "wires": [
-            [
-                "721d20cb1a0cb0f4"
-            ],
-            [
-                "2b14d2bd9c25a550"
-            ]
-        ]
-    },
-    {
-        "id": "721d20cb1a0cb0f4",
-        "type": "debug",
-        "z": "e1ac027a1b892927",
-        "name": "Broker Status Events",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 880,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "2b14d2bd9c25a550",
-        "type": "debug",
-        "z": "e1ac027a1b892927",
-        "name": "Broker Publish Events",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 880,
-        "y": 140,
+        "x": 1230,
+        "y": 440,
         "wires": []
     },
     {
@@ -324,11 +271,244 @@
         "pin": "7",
         "state": "INPUT",
         "arduino": "13175ec910863fcd",
-        "x": 510,
-        "y": 400,
+        "x": 370,
+        "y": 320,
         "wires": [
             [
                 "85a1638516fcc8d0"
+            ]
+        ]
+    },
+    {
+        "id": "37a980cfd533bfd5",
+        "type": "mqtt in",
+        "z": "e1ac027a1b892927",
+        "name": "MQTT Servo",
+        "topic": "/lfmpaes/petfeeder/servo",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "844a0f3dcde1a982",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 390,
+        "y": 520,
+        "wires": [
+            [
+                "dc84aa9010c7b2a3",
+                "c7aaa6d544e8ffeb"
+            ]
+        ]
+    },
+    {
+        "id": "c7aaa6d544e8ffeb",
+        "type": "debug",
+        "z": "e1ac027a1b892927",
+        "name": "MQTT Servo",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 710,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "3e4453275a7f2090",
+        "type": "while-loop",
+        "z": "e1ac027a1b892927",
+        "name": "Se for mais que 10cm",
+        "condi": "msg.payload > 10",
+        "limit": false,
+        "limitTime": 10000,
+        "time": "wl3e4453275a7f2090",
+        "timeType": "msg",
+        "x": 860,
+        "y": 260,
+        "wires": [
+            [
+                "3b9c017ce55db72d"
+            ],
+            [
+                "998216f68542eead"
+            ]
+        ]
+    },
+    {
+        "id": "998216f68542eead",
+        "type": "debug",
+        "z": "e1ac027a1b892927",
+        "name": "True",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "{\t    \"payload\": \"True\"\t}",
+        "targetType": "jsonata",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1130,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "3b9c017ce55db72d",
+        "type": "debug",
+        "z": "e1ac027a1b892927",
+        "name": "False",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "{\t    \"payload\": \"False\"\t}",
+        "targetType": "jsonata",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1130,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "5104dcb4d7810a76",
+        "type": "while-loop",
+        "z": "e1ac027a1b892927",
+        "name": "",
+        "condi": "msg.counter < 2",
+        "limit": false,
+        "limitTime": 10000,
+        "time": "wl5104dcb4d7810a76",
+        "timeType": "msg",
+        "x": 880,
+        "y": 680,
+        "wires": [
+            [
+                "dc84aa9010c7b2a3"
+            ],
+            [
+                "dc84aa9010c7b2a3",
+                "6dc2347ca9c13119",
+                "8b221915f6e30a83"
+            ]
+        ]
+    },
+    {
+        "id": "775008996888eb8a",
+        "type": "function",
+        "z": "e1ac027a1b892927",
+        "name": "Altera o Estado do Servo",
+        "func": "msg.counter = msg.counter + 1;\nmsg.payload = 180;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1050,
+        "y": 840,
+        "wires": [
+            [
+                "5104dcb4d7810a76"
+            ]
+        ]
+    },
+    {
+        "id": "6dc2347ca9c13119",
+        "type": "delay",
+        "z": "e1ac027a1b892927",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 820,
+        "y": 840,
+        "wires": [
+            [
+                "775008996888eb8a"
+            ]
+        ]
+    },
+    {
+        "id": "5436a9e1c924081d",
+        "type": "ui_button",
+        "z": "e1ac027a1b892927",
+        "name": "",
+        "group": "e654c2be62fc9630",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "Alimentar",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "0",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 460,
+        "y": 680,
+        "wires": [
+            [
+                "029dba1cb0f92779"
+            ]
+        ]
+    },
+    {
+        "id": "8b221915f6e30a83",
+        "type": "debug",
+        "z": "e1ac027a1b892927",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "counter",
+        "targetType": "msg",
+        "statusVal": "counter",
+        "statusType": "auto",
+        "x": 1210,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "029dba1cb0f92779",
+        "type": "change",
+        "z": "e1ac027a1b892927",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "counter",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 680,
+        "wires": [
+            [
+                "5104dcb4d7810a76"
             ]
         ]
     }
