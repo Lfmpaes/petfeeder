@@ -421,8 +421,8 @@
         "z": "e1ac027a1b892927",
         "name": "",
         "pauseType": "delay",
-        "timeout": "1",
-        "timeoutUnits": "seconds",
+        "timeout": "500",
+        "timeoutUnits": "milliseconds",
         "rate": "1",
         "nbRateUnits": "1",
         "rateUnits": "second",
@@ -432,7 +432,7 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 820,
+        "x": 830,
         "y": 840,
         "wires": [
             [
