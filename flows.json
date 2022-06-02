@@ -185,7 +185,7 @@
         "title": "Distância até o fim do reservatório",
         "label": "cm",
         "format": "{{value}}",
-        "min": 0,
+        "min": "2",
         "max": "12",
         "colors": [
             "#00b500",
