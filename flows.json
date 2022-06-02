@@ -513,14 +513,14 @@
         "id": "ed96f3fcafa235fa",
         "type": "function",
         "z": "e1ac027a1b892927",
-        "name": "TestFunction",
-        "func": "let date = new Date();\nlet year = date.getFullYear();\nlet month = (date.getMonth()).toString().length < 2 ? '0' + date.getMonth() : date.getMonth();\nlet day = (date.getDay()).toString().length < 2 ? '0' + date.getDay() : date.getDay();\nlet hour = (date.getHours()).toString().length < 2 ? '0' + date.getHours() : date.getHours();\nlet minute = (date.getMinutes()).toString().length < 2 ? '0' + date.getMinutes() : date.getMinutes();;\n\nvar currentDate = day + '/' + month + '/' + year \n    + ' ' + hour + ':' + minute;\n\nmsg.payload = String(currentDate);\nreturn msg;",
+        "name": "",
+        "func": "let date = new Date();\nlet year = date.getFullYear();\nlet month = (date.getMonth()).toString().length < 2 ? '0' + date.getMonth() : date.getMonth();\nlet day = (date.getDay()).toString().length < 2 ? '0' + date.getDay() : date.getDay();\nlet hour = (date.getHours()).toString().length < 2 ? '0' + date.getHours() : date.getHours();\nlet minute = (date.getMinutes()).toString().length < 2 ? '0' + date.getMinutes() : date.getMinutes();;\n\nvar currentDate = day + '/' + month + '/' + year \n    + ' ' + hour + ':' + minute;\n\nmsg.payload = currentDate + ' - O reservatório precisa ser reabastecido!';\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 930,
+        "x": 920,
         "y": 280,
         "wires": [
             [
