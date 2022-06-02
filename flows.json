@@ -163,32 +163,14 @@
         "pulse": "0.5",
         "pins": "7,11",
         "precision": "0",
-        "x": 120,
-        "y": 60,
+        "x": 140,
+        "y": 80,
         "wires": [
             [
-                "85a1638516fcc8d0",
                 "e7b65f4514cda7d6",
                 "3e4453275a7f2090"
             ]
         ]
-    },
-    {
-        "id": "85a1638516fcc8d0",
-        "type": "debug",
-        "z": "e1ac027a1b892927",
-        "name": "cm registrados",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 660,
-        "y": 60,
-        "wires": []
     },
     {
         "id": "e7b65f4514cda7d6",
@@ -213,109 +195,20 @@
         "seg1": "",
         "seg2": "",
         "className": "",
-        "x": 120,
-        "y": 120,
+        "x": 420,
+        "y": 200,
         "wires": []
-    },
-    {
-        "id": "650773ba2c8ddd7f",
-        "type": "ui_switch",
-        "z": "e1ac027a1b892927",
-        "name": "",
-        "label": "Servo",
-        "tooltip": "",
-        "group": "e654c2be62fc9630",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "decouple": "false",
-        "topic": "topic",
-        "topicType": "msg",
-        "style": "",
-        "onvalue": "180",
-        "onvalueType": "num",
-        "onicon": "",
-        "oncolor": "",
-        "offvalue": "0",
-        "offvalueType": "num",
-        "officon": "",
-        "offcolor": "",
-        "animate": false,
-        "className": "",
-        "x": 490,
-        "y": 300,
-        "wires": [
-            [
-                "dc84aa9010c7b2a3"
-            ]
-        ]
     },
     {
         "id": "dc84aa9010c7b2a3",
         "type": "arduino out",
         "z": "e1ac027a1b892927",
-        "name": "",
+        "name": "Servo Motor",
         "pin": "8",
         "state": "SERVO",
         "arduino": "13175ec910863fcd",
-        "x": 1010,
-        "y": 300,
-        "wires": []
-    },
-    {
-        "id": "d62fc4a57dc9e8ef",
-        "type": "arduino in",
-        "z": "e1ac027a1b892927",
-        "name": "",
-        "pin": "7",
-        "state": "INPUT",
-        "arduino": "13175ec910863fcd",
-        "x": 150,
-        "y": 180,
-        "wires": [
-            [
-                "85a1638516fcc8d0"
-            ]
-        ]
-    },
-    {
-        "id": "37a980cfd533bfd5",
-        "type": "mqtt in",
-        "z": "e1ac027a1b892927",
-        "name": "MQTT Servo",
-        "topic": "/lfmpaes/petfeeder/servo",
-        "qos": "2",
-        "datatype": "utf8",
-        "broker": "844a0f3dcde1a982",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 630,
-        "y": 360,
-        "wires": [
-            [
-                "dc84aa9010c7b2a3",
-                "c7aaa6d544e8ffeb"
-            ]
-        ]
-    },
-    {
-        "id": "c7aaa6d544e8ffeb",
-        "type": "debug",
-        "z": "e1ac027a1b892927",
-        "name": "MQTT Servo",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1030,
-        "y": 400,
+        "x": 1050,
+        "y": 440,
         "wires": []
     },
     {
@@ -328,8 +221,8 @@
         "limitTime": 10000,
         "time": "wl3e4453275a7f2090",
         "timeType": "msg",
-        "x": 660,
-        "y": 120,
+        "x": 460,
+        "y": 100,
         "wires": [
             [
                 "54dcb44a255dba0c"
@@ -343,22 +236,21 @@
         "id": "5104dcb4d7810a76",
         "type": "while-loop",
         "z": "e1ac027a1b892927",
-        "name": "",
+        "name": "While Counter < 2",
         "condi": "msg.counter < 2",
         "limit": false,
         "limitTime": 10000,
         "time": "wl5104dcb4d7810a76",
         "timeType": "msg",
-        "x": 660,
-        "y": 540,
+        "x": 790,
+        "y": 440,
         "wires": [
             [
                 "dc84aa9010c7b2a3"
             ],
             [
                 "dc84aa9010c7b2a3",
-                "6dc2347ca9c13119",
-                "8b221915f6e30a83"
+                "6dc2347ca9c13119"
             ]
         ]
     },
@@ -366,15 +258,15 @@
         "id": "775008996888eb8a",
         "type": "function",
         "z": "e1ac027a1b892927",
-        "name": "Altera o Estado do Servo",
+        "name": "Servo = 180 / Counter + 1",
         "func": "msg.counter = msg.counter + 1;\nmsg.payload = 180;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 830,
-        "y": 700,
+        "x": 920,
+        "y": 620,
         "wires": [
             [
                 "5104dcb4d7810a76"
@@ -398,8 +290,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 610,
-        "y": 700,
+        "x": 670,
+        "y": 620,
         "wires": [
             [
                 "775008996888eb8a"
@@ -426,8 +318,8 @@
         "payloadType": "num",
         "topic": "topic",
         "topicType": "msg",
-        "x": 240,
-        "y": 540,
+        "x": 380,
+        "y": 440,
         "wires": [
             [
                 "029dba1cb0f92779"
@@ -435,27 +327,10 @@
         ]
     },
     {
-        "id": "8b221915f6e30a83",
-        "type": "debug",
-        "z": "e1ac027a1b892927",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "counter",
-        "targetType": "msg",
-        "statusVal": "counter",
-        "statusType": "auto",
-        "x": 1030,
-        "y": 540,
-        "wires": []
-    },
-    {
         "id": "029dba1cb0f92779",
         "type": "change",
         "z": "e1ac027a1b892927",
-        "name": "",
+        "name": "Set Counter = 0",
         "rules": [
             {
                 "t": "set",
@@ -470,8 +345,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 440,
-        "y": 540,
+        "x": 560,
+        "y": 440,
         "wires": [
             [
                 "5104dcb4d7810a76"
@@ -491,8 +366,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 1160,
-        "y": 120,
+        "x": 960,
+        "y": 100,
         "wires": []
     },
     {
@@ -514,8 +389,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 890,
-        "y": 80,
+        "x": 690,
+        "y": 60,
         "wires": [
             [
                 "5c777454bd6d57a7"
@@ -541,8 +416,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 890,
-        "y": 120,
+        "x": 690,
+        "y": 100,
         "wires": [
             [
                 "5c777454bd6d57a7",
@@ -564,8 +439,8 @@
         "correl": "",
         "expiry": "",
         "broker": "844a0f3dcde1a982",
-        "x": 1300,
-        "y": 240,
+        "x": 1260,
+        "y": 200,
         "wires": []
     },
     {
@@ -587,8 +462,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1030,
-        "y": 240,
+        "x": 910,
+        "y": 200,
         "wires": [
             [
                 "df55bc74fee8fccd"
@@ -608,12 +483,49 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 220,
-        "y": 480,
+        "x": 200,
+        "y": 440,
         "wires": [
             [
                 "5436a9e1c924081d"
             ]
+        ]
+    },
+    {
+        "id": "88c9a75bf9268d4c",
+        "type": "comment",
+        "z": "e1ac027a1b892927",
+        "name": "Servo na pos. 0: aberto. Servo na pos. 180: fechado.",
+        "info": "Servo na pos. 0: aberto.\nServo na pos. 180: fechado.",
+        "x": 820,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "f16b78be974fcdcd",
+        "type": "comment",
+        "z": "e1ac027a1b892927",
+        "name": "Recebe uma mensagem via MQTT e aciona o circuito de abrir/fechar o compartimento de ração.",
+        "info": "",
+        "x": 450,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "ed96f3fcafa235fa",
+        "type": "function",
+        "z": "e1ac027a1b892927",
+        "name": "",
+        "func": "msg = Date.now()\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 900,
+        "y": 280,
+        "wires": [
+            []
         ]
     }
 ]
