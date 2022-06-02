@@ -421,7 +421,7 @@
         "wires": [
             [
                 "5c777454bd6d57a7",
-                "cddbfb2cce8b3a0e"
+                "ed96f3fcafa235fa"
             ]
         ]
     },
@@ -462,12 +462,10 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 910,
+        "x": 950,
         "y": 200,
         "wires": [
-            [
-                "df55bc74fee8fccd"
-            ]
+            []
         ]
     },
     {
@@ -516,7 +514,7 @@
         "type": "function",
         "z": "e1ac027a1b892927",
         "name": "",
-        "func": "msg = Date.now()\nreturn msg;",
+        "func": "\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -525,7 +523,9 @@
         "x": 900,
         "y": 280,
         "wires": [
-            []
+            [
+                "df55bc74fee8fccd"
+            ]
         ]
     }
 ]
