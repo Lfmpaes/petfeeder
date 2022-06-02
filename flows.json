@@ -514,13 +514,13 @@
         "type": "function",
         "z": "e1ac027a1b892927",
         "name": "",
-        "func": "var date = new Date();\nvar year = date.getFullYear;\nvar month = date.getMonth;\nvar day = date.getDay;\nvar hour = date.getHours;\nvar minute = date.getMinutes;\n\nvar currentDate = String(String(day) + String(month));\n\nmsg.payload = currentDate;\nreturn msg;",
+        "func": "let date = new Date();\nlet year = date.getFullYear;\nlet month = date.getMonth;\nlet day = date.getDay;\nlet hour = date.getHours;\nlet minute = date.getMinutes;\n\nvar currentDate = String(String(day) + String(month));\n\nmsg.payload = currentDate;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 900,
+        "x": 920,
         "y": 280,
         "wires": [
             [
@@ -541,7 +541,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1150,
+        "x": 1110,
         "y": 280,
         "wires": []
     },
