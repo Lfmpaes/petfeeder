@@ -182,11 +182,11 @@
         "width": 0,
         "height": 0,
         "gtype": "gage",
-        "title": "Distância",
+        "title": "Distância até o fim do reservatório",
         "label": "cm",
         "format": "{{value}}",
         "min": 0,
-        "max": "15",
+        "max": "12",
         "colors": [
             "#00b500",
             "#e6e600",
@@ -195,8 +195,8 @@
         "seg1": "",
         "seg2": "",
         "className": "",
-        "x": 420,
-        "y": 200,
+        "x": 480,
+        "y": 140,
         "wires": []
     },
     {
@@ -222,7 +222,7 @@
         "time": "wl3e4453275a7f2090",
         "timeType": "msg",
         "x": 460,
-        "y": 100,
+        "y": 80,
         "wires": [
             [
                 "54dcb44a255dba0c"
