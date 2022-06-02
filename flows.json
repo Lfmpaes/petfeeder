@@ -444,31 +444,6 @@
         "wires": []
     },
     {
-        "id": "cddbfb2cce8b3a0e",
-        "type": "change",
-        "z": "e1ac027a1b892927",
-        "name": "Aviso de reabastecimento",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "O pote precisa ser reabastecido!",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 950,
-        "y": 200,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "a4ba65d81198518e",
         "type": "mqtt in",
         "z": "e1ac027a1b892927",
@@ -513,64 +488,18 @@
         "id": "ed96f3fcafa235fa",
         "type": "function",
         "z": "e1ac027a1b892927",
-        "name": "",
+        "name": "Aviso de Reabastecimento + Data/Hora",
         "func": "let date = new Date();\nlet year = date.getFullYear();\nlet month = (date.getMonth()).toString().length < 2 ? '0' + date.getMonth() : date.getMonth();\nlet day = (date.getDay()).toString().length < 2 ? '0' + date.getDay() : date.getDay();\nlet hour = (date.getHours()).toString().length < 2 ? '0' + date.getHours() : date.getHours();\nlet minute = (date.getMinutes()).toString().length < 2 ? '0' + date.getMinutes() : date.getMinutes();;\n\nvar currentDate = day + '/' + month + '/' + year \n    + ' ' + hour + ':' + minute;\n\nmsg.payload = currentDate + ' - O reservatório precisa ser reabastecido!';\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 920,
-        "y": 280,
+        "x": 960,
+        "y": 200,
         "wires": [
             [
-                "1836a7da1a77332b"
-            ]
-        ]
-    },
-    {
-        "id": "1836a7da1a77332b",
-        "type": "debug",
-        "z": "e1ac027a1b892927",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1110,
-        "y": 280,
-        "wires": []
-    },
-    {
-        "id": "ee7bacb5790af718",
-        "type": "inject",
-        "z": "e1ac027a1b892927",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 720,
-        "y": 280,
-        "wires": [
-            [
-                "ed96f3fcafa235fa"
+                "df55bc74fee8fccd"
             ]
         ]
     }
