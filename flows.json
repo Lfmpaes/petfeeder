@@ -163,8 +163,8 @@
         "pulse": "0.5",
         "pins": "7,11",
         "precision": "0",
-        "x": 140,
-        "y": 80,
+        "x": 220,
+        "y": 160,
         "wires": [
             [
                 "e7b65f4514cda7d6",
@@ -195,8 +195,8 @@
         "seg1": "",
         "seg2": "",
         "className": "",
-        "x": 480,
-        "y": 140,
+        "x": 560,
+        "y": 220,
         "wires": []
     },
     {
@@ -208,7 +208,7 @@
         "state": "SERVO",
         "arduino": "13175ec910863fcd",
         "x": 1050,
-        "y": 440,
+        "y": 460,
         "wires": []
     },
     {
@@ -221,8 +221,8 @@
         "limitTime": 10000,
         "time": "wl3e4453275a7f2090",
         "timeType": "msg",
-        "x": 460,
-        "y": 80,
+        "x": 540,
+        "y": 160,
         "wires": [
             [
                 "54dcb44a255dba0c"
@@ -243,7 +243,7 @@
         "time": "wl5104dcb4d7810a76",
         "timeType": "msg",
         "x": 790,
-        "y": 440,
+        "y": 460,
         "wires": [
             [
                 "dc84aa9010c7b2a3"
@@ -266,7 +266,7 @@
         "finalize": "",
         "libs": [],
         "x": 920,
-        "y": 620,
+        "y": 640,
         "wires": [
             [
                 "5104dcb4d7810a76"
@@ -291,7 +291,7 @@
         "allowrate": false,
         "outputs": 1,
         "x": 670,
-        "y": 620,
+        "y": 640,
         "wires": [
             [
                 "775008996888eb8a"
@@ -319,7 +319,7 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 380,
-        "y": 440,
+        "y": 460,
         "wires": [
             [
                 "029dba1cb0f92779"
@@ -346,7 +346,7 @@
         "to": "",
         "reg": false,
         "x": 560,
-        "y": 440,
+        "y": 460,
         "wires": [
             [
                 "5104dcb4d7810a76"
@@ -366,8 +366,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 960,
-        "y": 100,
+        "x": 1040,
+        "y": 180,
         "wires": []
     },
     {
@@ -389,8 +389,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 690,
-        "y": 60,
+        "x": 770,
+        "y": 160,
         "wires": [
             [
                 "5c777454bd6d57a7"
@@ -416,8 +416,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 690,
-        "y": 100,
+        "x": 770,
+        "y": 200,
         "wires": [
             [
                 "5c777454bd6d57a7",
@@ -439,8 +439,8 @@
         "correl": "",
         "expiry": "",
         "broker": "844a0f3dcde1a982",
-        "x": 1260,
-        "y": 200,
+        "x": 1240,
+        "y": 280,
         "wires": []
     },
     {
@@ -457,7 +457,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 200,
-        "y": 440,
+        "y": 460,
         "wires": [
             [
                 "5436a9e1c924081d"
@@ -471,17 +471,17 @@
         "name": "Servo na pos. 0: aberto. Servo na pos. 180: fechado.",
         "info": "Servo na pos. 0: aberto.\nServo na pos. 180: fechado.",
         "x": 820,
-        "y": 660,
+        "y": 680,
         "wires": []
     },
     {
         "id": "f16b78be974fcdcd",
         "type": "comment",
         "z": "e1ac027a1b892927",
-        "name": "Recebe uma mensagem via MQTT e aciona o circuito de abrir/fechar o compartimento de ração.",
+        "name": "Recebe uma mensagem via MQTT e aciona o circuito de abrir e fechar o compartimento de ração para que seja despejada a comida.",
         "info": "",
-        "x": 450,
-        "y": 400,
+        "x": 570,
+        "y": 420,
         "wires": []
     },
     {
@@ -496,11 +496,21 @@
         "finalize": "",
         "libs": [],
         "x": 960,
-        "y": 200,
+        "y": 280,
         "wires": [
             [
                 "df55bc74fee8fccd"
             ]
         ]
+    },
+    {
+        "id": "a5a1c0a0fa926732",
+        "type": "comment",
+        "z": "e1ac027a1b892927",
+        "name": "O Sensor de Proximidade verifica a distância até o final do reservatório e notifica via MQTT caso a distância seja superior a 10cm.",
+        "info": "",
+        "x": 560,
+        "y": 120,
+        "wires": []
     }
 ]
