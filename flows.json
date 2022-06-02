@@ -514,7 +514,7 @@
         "type": "function",
         "z": "e1ac027a1b892927",
         "name": "",
-        "func": "var date = new Date();\nvar year = date.getFullYear;\nvar month = date.getMonth;\nvar day = date.getDay;\nvar hour = date.getHours;\nvar minute = date.getMinutes;\n\nvar currentDate = day + '/' + month + '/' + year;\n\n// msg.payload =\nreturn msg;",
+        "func": "var date = new Date();\nvar year = date.getFullYear;\nvar month = date.getMonth;\nvar day = date.getDay;\nvar hour = date.getHours;\nvar minute = date.getMinutes;\n\nvar currentDate = day + '/' + month + '/' + year;\n\nmsg.payload = currentDate\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
