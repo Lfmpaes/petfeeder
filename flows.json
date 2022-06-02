@@ -332,10 +332,12 @@
         "y": 160,
         "wires": [
             [
-                "3b9c017ce55db72d"
+                "3b9c017ce55db72d",
+                "54dcb44a255dba0c"
             ],
             [
-                "998216f68542eead"
+                "998216f68542eead",
+                "d93d1eaaf5051c57"
             ]
         ]
     },
@@ -525,8 +527,62 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 1260,
+        "x": 1240,
         "y": 180,
         "wires": []
+    },
+    {
+        "id": "54dcb44a255dba0c",
+        "type": "change",
+        "z": "e1ac027a1b892927",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Não",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1000,
+        "y": 80,
+        "wires": [
+            [
+                "5c777454bd6d57a7"
+            ]
+        ]
+    },
+    {
+        "id": "d93d1eaaf5051c57",
+        "type": "change",
+        "z": "e1ac027a1b892927",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Sim",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1000,
+        "y": 280,
+        "wires": [
+            [
+                "5c777454bd6d57a7"
+            ]
+        ]
     }
 ]
