@@ -514,7 +514,7 @@
         "type": "function",
         "z": "e1ac027a1b892927",
         "name": "TestFunction",
-        "func": "let date = new Date();\nlet year = date.getFullYear();\nlet month = (date.getMonth()).length = 2 ? '0' + date.getMonth() : date.getMonth();\nlet day = (date.getDay()).length = 2 ? '0' + date.getDay() : date.getDay();\nlet hour = (date.getHours()).length = 2 ? '0' + date.getHours() : date.getHours();\nlet minute = (date.getMinutes()).length = 2 ? '0' + date.getMinutes() : date.getMinutes();;\n\nvar currentDate = day + '/' + month + '/' + year \n    + ' ' + hour + ':' + minute;\n\nmsg.payload = String(currentDate);\nreturn msg;",
+        "func": "let date = new Date();\nlet year = date.getFullYear();\nlet month = (date.getMonth()).length = 2 ? '0' + date.getMonth() : date.getMonth();\nlet day = (date.getDay()).length = 2 ? '0' + date.getDay() : date.getDay();\nlet hour = (date.getHours()).length < 2 ? '0' + date.getHours() : date.getHours();\nlet minute = (date.getMinutes()).length = 2 ? '0' + date.getMinutes() : date.getMinutes();;\n\nvar currentDate = day + '/' + month + '/' + year \n    + ' ' + hour + ':' + minute;\n\nmsg.payload = String(currentDate);\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
