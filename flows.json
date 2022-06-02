@@ -514,7 +514,7 @@
         "type": "function",
         "z": "e1ac027a1b892927",
         "name": "",
-        "func": "\nreturn msg;",
+        "func": "msg.payload = Date.now();\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
