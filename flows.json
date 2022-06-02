@@ -512,24 +512,5 @@
         "x": 560,
         "y": 120,
         "wires": []
-    },
-    {
-        "id": "672c8071897afd83",
-        "type": "function",
-        "z": "e1ac027a1b892927",
-        "name": "",
-        "func": "msg.payload = 180;\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "// Code added here will be run when the\n// node is being stopped or re-deployed.\nmsg.payload = 180;\nreturn msg;",
-        "libs": [],
-        "x": 1060,
-        "y": 540,
-        "wires": [
-            [
-                "dc84aa9010c7b2a3"
-            ]
-        ]
     }
 ]
