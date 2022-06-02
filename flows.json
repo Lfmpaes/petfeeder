@@ -525,7 +525,7 @@
         "name": "",
         "label": "Precisa Reabastecer?",
         "format": "{{msg.payload}}",
-        "layout": "row-spread",
+        "layout": "row-left",
         "className": "",
         "x": 1260,
         "y": 180,
