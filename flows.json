@@ -511,5 +511,22 @@
                 "5104dcb4d7810a76"
             ]
         ]
+    },
+    {
+        "id": "5c777454bd6d57a7",
+        "type": "ui_text",
+        "z": "e1ac027a1b892927",
+        "group": "e654c2be62fc9630",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Precisa Reabastecer?",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1260,
+        "y": 180,
+        "wires": []
     }
 ]
