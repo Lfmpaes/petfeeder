@@ -163,8 +163,8 @@
         "pulse": "0.5",
         "pins": "7,11",
         "precision": "0",
-        "x": 280,
-        "y": 120,
+        "x": 120,
+        "y": 60,
         "wires": [
             [
                 "85a1638516fcc8d0",
@@ -177,7 +177,7 @@
         "id": "85a1638516fcc8d0",
         "type": "debug",
         "z": "e1ac027a1b892927",
-        "name": "",
+        "name": "cm registrados",
         "active": false,
         "tosidebar": true,
         "console": false,
@@ -186,8 +186,8 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 730,
-        "y": 100,
+        "x": 660,
+        "y": 60,
         "wires": []
     },
     {
@@ -213,8 +213,8 @@
         "seg1": "",
         "seg2": "",
         "className": "",
-        "x": 580,
-        "y": 220,
+        "x": 120,
+        "y": 120,
         "wires": []
     },
     {
@@ -243,8 +243,8 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 350,
-        "y": 320,
+        "x": 150,
+        "y": 300,
         "wires": [
             [
                 "dc84aa9010c7b2a3"
@@ -259,8 +259,8 @@
         "pin": "8",
         "state": "SERVO",
         "arduino": "13175ec910863fcd",
-        "x": 1090,
-        "y": 340,
+        "x": 1010,
+        "y": 300,
         "wires": []
     },
     {
@@ -271,8 +271,8 @@
         "pin": "7",
         "state": "INPUT",
         "arduino": "13175ec910863fcd",
-        "x": 230,
-        "y": 220,
+        "x": 150,
+        "y": 180,
         "wires": [
             [
                 "85a1638516fcc8d0"
@@ -292,8 +292,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 250,
-        "y": 420,
+        "x": 630,
+        "y": 360,
         "wires": [
             [
                 "dc84aa9010c7b2a3",
@@ -314,66 +314,30 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 570,
-        "y": 440,
+        "x": 1030,
+        "y": 400,
         "wires": []
     },
     {
         "id": "3e4453275a7f2090",
         "type": "while-loop",
         "z": "e1ac027a1b892927",
-        "name": "Se for mais que 10cm",
+        "name": "Distância maior que 10cm?",
         "condi": "msg.payload > 10",
         "limit": false,
         "limitTime": 10000,
         "time": "wl3e4453275a7f2090",
         "timeType": "msg",
-        "x": 720,
-        "y": 160,
+        "x": 660,
+        "y": 120,
         "wires": [
             [
-                "3b9c017ce55db72d",
                 "54dcb44a255dba0c"
             ],
             [
-                "998216f68542eead",
                 "d93d1eaaf5051c57"
             ]
         ]
-    },
-    {
-        "id": "998216f68542eead",
-        "type": "debug",
-        "z": "e1ac027a1b892927",
-        "name": "True",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "{\t    \"payload\": \"True\"\t}",
-        "targetType": "jsonata",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 990,
-        "y": 220,
-        "wires": []
-    },
-    {
-        "id": "3b9c017ce55db72d",
-        "type": "debug",
-        "z": "e1ac027a1b892927",
-        "name": "False",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "{\t    \"payload\": \"False\"\t}",
-        "targetType": "jsonata",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 990,
-        "y": 140,
-        "wires": []
     },
     {
         "id": "5104dcb4d7810a76",
@@ -385,8 +349,8 @@
         "limitTime": 10000,
         "time": "wl5104dcb4d7810a76",
         "timeType": "msg",
-        "x": 740,
-        "y": 580,
+        "x": 660,
+        "y": 540,
         "wires": [
             [
                 "dc84aa9010c7b2a3"
@@ -409,8 +373,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 910,
-        "y": 740,
+        "x": 830,
+        "y": 700,
         "wires": [
             [
                 "5104dcb4d7810a76"
@@ -434,8 +398,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 690,
-        "y": 740,
+        "x": 610,
+        "y": 700,
         "wires": [
             [
                 "775008996888eb8a"
@@ -462,8 +426,8 @@
         "payloadType": "num",
         "topic": "topic",
         "topicType": "msg",
-        "x": 320,
-        "y": 580,
+        "x": 240,
+        "y": 540,
         "wires": [
             [
                 "029dba1cb0f92779"
@@ -483,8 +447,8 @@
         "targetType": "msg",
         "statusVal": "counter",
         "statusType": "auto",
-        "x": 1110,
-        "y": 580,
+        "x": 1030,
+        "y": 540,
         "wires": []
     },
     {
@@ -506,8 +470,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 520,
-        "y": 580,
+        "x": 440,
+        "y": 540,
         "wires": [
             [
                 "5104dcb4d7810a76"
@@ -527,15 +491,15 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 1260,
-        "y": 180,
+        "x": 1160,
+        "y": 120,
         "wires": []
     },
     {
         "id": "54dcb44a255dba0c",
         "type": "change",
         "z": "e1ac027a1b892927",
-        "name": "",
+        "name": "Não",
         "rules": [
             {
                 "t": "set",
@@ -550,7 +514,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1000,
+        "x": 890,
         "y": 80,
         "wires": [
             [
@@ -562,7 +526,7 @@
         "id": "d93d1eaaf5051c57",
         "type": "change",
         "z": "e1ac027a1b892927",
-        "name": "",
+        "name": "Sim",
         "rules": [
             {
                 "t": "set",
@@ -577,11 +541,78 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1000,
-        "y": 280,
+        "x": 890,
+        "y": 120,
         "wires": [
             [
-                "5c777454bd6d57a7"
+                "5c777454bd6d57a7",
+                "cddbfb2cce8b3a0e"
+            ]
+        ]
+    },
+    {
+        "id": "df55bc74fee8fccd",
+        "type": "mqtt out",
+        "z": "e1ac027a1b892927",
+        "name": "MQTT Reabastecer",
+        "topic": "/lfmpaes/petfeeder/refill",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "844a0f3dcde1a982",
+        "x": 1260,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "cddbfb2cce8b3a0e",
+        "type": "change",
+        "z": "e1ac027a1b892927",
+        "name": "Aviso de reabastecimento",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "O pote precisa ser reabastecido!",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1030,
+        "y": 240,
+        "wires": [
+            [
+                "df55bc74fee8fccd"
+            ]
+        ]
+    },
+    {
+        "id": "a4ba65d81198518e",
+        "type": "mqtt in",
+        "z": "e1ac027a1b892927",
+        "name": "MQTT Alimentar",
+        "topic": "/lfmpaes/petfeeder/alimentar",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "844a0f3dcde1a982",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 220,
+        "y": 480,
+        "wires": [
+            [
+                "5436a9e1c924081d"
             ]
         ]
     }
