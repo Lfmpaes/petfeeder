@@ -512,5 +512,24 @@
         "x": 560,
         "y": 120,
         "wires": []
+    },
+    {
+        "id": "672c8071897afd83",
+        "type": "function",
+        "z": "e1ac027a1b892927",
+        "name": "",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\nmsg.payload = 180;\nreturn msg;",
+        "finalize": "",
+        "libs": [],
+        "x": 1060,
+        "y": 540,
+        "wires": [
+            [
+                "dc84aa9010c7b2a3"
+            ]
+        ]
     }
 ]
