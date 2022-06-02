@@ -514,7 +514,7 @@
         "type": "function",
         "z": "e1ac027a1b892927",
         "name": "TestFunction",
-        "func": "let date = new Date();\nlet year = date.getFullYear();\nlet month = date.getMonth();\nlet day = date.getDay();\nlet hour = date.getHours();\nlet minute = date.getMinutes();\n\nvar currentDate = day + '/' + month + '/' + year;\n\nmsg.payload = String(currentDate);\nreturn msg;",
+        "func": "let date = new Date();\nlet year = date.getFullYear();\nlet month = date.getUTCMonth();\nlet day = date.getDay();\nlet hour = date.getHours();\nlet minute = date.getMinutes();\n\nvar currentDate = day + '/' + month + '/' + year;\n\nmsg.payload = String(currentDate);\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
